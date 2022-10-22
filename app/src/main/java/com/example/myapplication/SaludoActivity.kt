@@ -1,12 +1,15 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class SaludoActivity : AppCompatActivity() {
 
     private lateinit var txtSaludo : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_saludo)
@@ -15,11 +18,16 @@ class SaludoActivity : AppCompatActivity() {
         txtSaludo = findViewById(R.id.txtSaludo)
 
         //Recuperamos la información pasada en el intent
-        val saludo = intent.getStringExtra("Nombre")
+
+        val jugadorRecogido: Jugador = intent.getSerializableExtra("personaje") as Jugador
+
 
         //Construimos el mensaje a mostrar
-        txtSaludo.text = "Hola $saludo"
-    }
+        txtSaludo.text = jugadorRecogido.toString()
+
+            }
+
+
 }
 
 
