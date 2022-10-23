@@ -9,9 +9,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/lytContenedor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+            tools:ignore="LabelFor"
+            >
 
             <TextView
                 android:id="@+id/lblPrincipal"
@@ -23,6 +24,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/principal"
                 android:textAlignment="viewStart"
+                app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/lblNombre"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -35,22 +37,31 @@
                 android:id="@+id/lblNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="165dp"
                 android:text="@string/_01"
                 android:textAlignment="viewStart"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="47dp"
-                tools:layout_editor_absoluteY="113dp" />
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toTopOf="@+id/txtNombre"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblPrincipal" />
 
             <EditText
                 android:id="@+id/txtNombre"
                 android:layout_width="299dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="47dp"
-                android:layout_marginEnd="65dp"
-                android:layout_marginBottom="17dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginBottom="9dp"
+                android:autofillHints="name"
                 android:inputType="text"
+                app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/lblOficio"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblNombre"
                 tools:ignore="MissingConstraints" />
@@ -59,24 +70,27 @@
                 android:id="@+id/lblOficio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="132dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="181dp"
                 android:text="@string/_02"
+                app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/txtOficio"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtNombre"
-                app:layout_constraintVertical_bias="1.0"
                 tools:ignore="MissingConstraints" />
 
             <EditText
                 android:id="@+id/txtOficio"
                 android:layout_width="299dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="47dp"
-                android:layout_marginEnd="65dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="68dp"
+                android:autofillHints="Job"
                 android:inputType="text"
-                app:layout_constraintBottom_toTopOf="@+id/CapacidadMochila"
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toTopOf="@+id/lblCapacidadMochila"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblOficio"
@@ -86,9 +100,10 @@
                 android:id="@+id/Edad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
+                android:layout_marginStart="45dp"
                 android:layout_marginEnd="182dp"
                 android:text="@string/_04"
+                app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/txtEdad"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -99,52 +114,59 @@
                 android:id="@+id/txtEdad"
                 android:layout_width="299dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="47dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginStart="45dp"
                 android:layout_marginEnd="65dp"
+                android:layout_marginBottom="13dp"
+                android:autofillHints="Edad"
                 android:inputType="number"
+                app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/Clase"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Edad"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
 
             <TextView
-                android:id="@+id/CapacidadMochila"
+                android:id="@+id/lblCapacidadMochila"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="47dp"
-                android:layout_marginTop="17dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="9dp"
                 android:layout_marginEnd="62dp"
+                android:layout_marginBottom="1dp"
                 android:text="@string/_03"
+                app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/txtMochila"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtOficio"
                 tools:ignore="MissingConstraints" />
 
-
             <EditText
                 android:id="@+id/txtMochila"
                 android:layout_width="299dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="47dp"
-                android:layout_marginEnd="65dp"
-                android:layout_marginBottom="17dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="62dp"
+                android:autofillHints="mochila"
                 android:inputType="number"
+                app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/Raza"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CapacidadMochila"
+                app:layout_constraintTop_toBottomOf="@+id/lblCapacidadMochila"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/Raza"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="47dp"
-                android:layout_marginEnd="137dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="136dp"
                 android:text="@string/_05"
+                app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/txtRaza"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -155,52 +177,66 @@
                 android:id="@+id/txtRaza"
                 android:layout_width="299dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="47dp"
+                android:layout_marginStart="45dp"
                 android:layout_marginEnd="65dp"
-                android:layout_marginBottom="17dp"
+                android:layout_marginBottom="9dp"
+                android:autofillHints="Raza"
                 android:inputType="text"
+                app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/Edad"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Raza"
                 tools:ignore="MissingConstraints" />
 
+
             <TextView
                 android:id="@+id/Clase"
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
                 android:layout_marginStart="45dp"
-                android:layout_marginTop="17dp"
-                android:layout_marginEnd="182dp"
-                android:layout_marginBottom="1dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="181dp"
                 android:text="@string/_06"
+                app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/txtClase"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtEdad"
                 tools:ignore="MissingConstraints" />
 
+
             <EditText
                 android:id="@+id/txtClase"
                 android:layout_width="299dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="45dp"
-
-                android:layout_marginTop="2dp"
                 android:layout_marginEnd="67dp"
+                android:layout_marginBottom="38dp"
+                android:autofillHints="Clase"
                 android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toTopOf="@+id/aceptar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Clase"
                 tools:ignore="MissingConstraints" />
 
             <Button
-            android:id="@+id/CrearPersonaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/aceptar"
+                android:id="@+id/aceptar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="116dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="117dp"
+                android:text="@string/aceptar"
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtClase"
                 tools:ignore="MissingConstraints" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

@@ -1,12 +1,88 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/lytContenedorSaludo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
+    android:id="@+id/lytContenedorSaludo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-        <TextView android:id="@+id/txtSaludo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
+
+    <TextView
+        android:id="@+id/Edad"
+        android:layout_width="304dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="182dp"
+        android:text="\nESTAS SON LAS CARACTERÍSTICAS DE TU PERSONAJE"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/txtSaludo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+    <TextView android:id="@+id/txtEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+    <TextView android:id="@+id/txtClase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+    <TextView android:id="@+id/txtRaza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+    <TextView android:id="@+id/txtCapacidadMochilaSaludo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txttitulo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\n \n VAMOS A HABLAR UN POCO"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/Subtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vamos a  hablar un poco con tu jugador\n\ nunca se sabe que puede pasar"
+        android:textAlignment="center"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/Subtitulo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="                          Pulsa '*' para terminar"
+        android:textAlignment="textStart"
+        android:textSize="10sp" />
+
+    <EditText
+        android:id="@+id/hablemos"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="9dp"
+        android:autofillHints=""
+        android:inputType="text" />
+
+
+    <TextView
+        android:id="@+id/respuesta1"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text=""
+        android:textAlignment="textStart"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/botonhablar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HABLEMOS" />
 
 </LinearLayout>

@@ -15,23 +15,36 @@ class Jugador : Serializable {
 
 
     //contructor
-    constructor(oficio: String, nombre: String, capacidadPesoMochilaMax: Double, estadoVital: Int, razas: String, clase: String) {
-        this.oficio = oficio
-        this.nombre = nombre
+    constructor(nombre: String?, capacidadPesoMochilaMax: Double, estadoVital: Int, razas: String?, clase: String?) {
+        if (nombre != null) {
+            this.nombre = nombre
+        }
         this.capacidadPesoMochilaMax = capacidadPesoMochilaMax.toDouble()
         this.estadoVital =estadoVital
-        this.razas = razas
-        this.clase = clase
+        if (razas != null) {
+            this.razas = razas
+        }
+        if (clase != null) {
+            this.clase = clase
+        }
     }
 
     //impresión
     override fun toString(): String {
-        return "Jugador(oficio='$oficio'," +
-                " nombre='$nombre'," +
+        return "Jugador(nombre='$nombre'," +
                 " capacidadPesoMochilaMax=$capacidadPesoMochilaMax, " +
                 "estadoVital = $estadoVital,"+
                 "razas = $razas," +
                 "clase = $clase)"
+    }
+
+    fun getNombre(jugador : Jugador): String {
+        return jugador.nombre
+    }
+
+    @JvmName("setNombre1")
+    fun setNombre(variable: String) {
+        this.nombre = variable
     }
 
 }
