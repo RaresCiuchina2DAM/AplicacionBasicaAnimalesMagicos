@@ -14,24 +14,139 @@
             tools:ignore="LabelFor"
             >
 
+
             <TextView
                 android:id="@+id/lblPrincipal"
-                android:layout_width="140dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="134dp"
-                android:layout_marginTop="47dp"
-                android:layout_marginEnd="137dp"
-                android:layout_marginBottom="10dp"
+                android:layout_width="146dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="135dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="136dp"
+                android:layout_marginBottom="27dp"
+                android:fontFamily="@font/alfa_slab_one"
                 android:text="@string/principal"
-                android:textAlignment="viewStart"
+                android:textAlignment="center"
+                android:textStyle="italic"
                 app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toTopOf="@+id/lblNombre"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints" />
 
+            <EditText
+                android:id="@+id/txtEdad"
+                android:layout_width="299dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="43dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="69dp"
+                android:autofillHints="Edad"
+                android:inputType="number"
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toTopOf="@+id/lblCapacidadMochila"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Edad"
+                tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/lblCapacidadMochila"
+                android:layout_width="285dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="43dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="83dp"
+                android:fontFamily="monospace"
+                android:text="@string/_03"
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toTopOf="@+id/txtMochila"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEdad"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/txtMochila"
+                android:layout_width="299dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="43dp"
+                android:layout_marginEnd="69dp"
+                android:layout_marginBottom="29dp"
+                android:autofillHints="mochila"
+                android:inputType="number"
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toTopOf="@+id/aceptar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblCapacidadMochila"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/Edad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginEnd="133dp"
+                android:fontFamily="monospace"
+                android:text="@string/_04"
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toTopOf="@+id/txtEdad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/esENANO"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/Raza"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="43dp"
+                android:layout_marginEnd="133dp"
+                android:layout_marginBottom="7dp"
+                android:fontFamily="monospace"
+                android:text="@string/_05"
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toTopOf="@+id/esHUMANO"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cmbOpciones"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/Clase"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="125dp"
+                android:fontFamily="monospace"
+                android:text="@string/_06"
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toTopOf="@+id/cmbOpciones"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombre"
+                tools:ignore="MissingConstraints" />
+
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="299dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="69dp"
+                android:layout_marginBottom="13dp"
+                android:autofillHints="name"
+                android:inputType="text"
+                app:barrierAllowsGoneWidgets="false"
+                app:layout_constraintBottom_toTopOf="@+id/Clase"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblNombre"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/lblNombre"
@@ -39,8 +154,10 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginStart="45dp"
-                android:layout_marginTop="21dp"
-                android:layout_marginEnd="165dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="117dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="monospace"
                 android:text="@string/_01"
                 android:textAlignment="viewStart"
                 app:barrierAllowsGoneWidgets="false"
@@ -49,193 +166,90 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblPrincipal" />
 
-            <EditText
-                android:id="@+id/txtNombre"
+
+            <Spinner
+                android:id="@+id/cmbOpciones"
                 android:layout_width="299dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginEnd="64dp"
-                android:layout_marginBottom="9dp"
-                android:autofillHints="name"
-                android:inputType="text"
-                app:barrierAllowsGoneWidgets="false"
-                app:layout_constraintBottom_toTopOf="@+id/lblOficio"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lblNombre"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/lblOficio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="181dp"
-                android:text="@string/_02"
-                app:barrierAllowsGoneWidgets="false"
-                app:layout_constraintBottom_toTopOf="@+id/txtOficio"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNombre"
-                tools:ignore="MissingConstraints" />
-
-            <EditText
-                android:id="@+id/txtOficio"
-                android:layout_width="299dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginEnd="68dp"
-                android:autofillHints="Job"
-                android:inputType="text"
-                app:barrierAllowsGoneWidgets="false"
-                app:layout_constraintBottom_toTopOf="@+id/lblCapacidadMochila"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lblOficio"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/Edad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginEnd="182dp"
-                android:text="@string/_04"
-                app:barrierAllowsGoneWidgets="false"
-                app:layout_constraintBottom_toTopOf="@+id/txtEdad"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtRaza"
-                tools:ignore="MissingConstraints" />
-
-            <EditText
-                android:id="@+id/txtEdad"
-                android:layout_width="299dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginEnd="65dp"
-                android:layout_marginBottom="13dp"
-                android:autofillHints="Edad"
-                android:inputType="number"
-                app:barrierAllowsGoneWidgets="false"
-                app:layout_constraintBottom_toTopOf="@+id/Clase"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Edad"
-                tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
-
-
-            <TextView
-                android:id="@+id/lblCapacidadMochila"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="62dp"
-                android:layout_marginBottom="1dp"
-                android:text="@string/_03"
-                app:barrierAllowsGoneWidgets="false"
-                app:layout_constraintBottom_toTopOf="@+id/txtMochila"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtOficio"
-                tools:ignore="MissingConstraints" />
-
-            <EditText
-                android:id="@+id/txtMochila"
-                android:layout_width="299dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginEnd="62dp"
-                android:autofillHints="mochila"
-                android:inputType="number"
-                app:barrierAllowsGoneWidgets="false"
+                android:layout_height="50dp"
+                android:layout_marginStart="43dp"
+                android:layout_marginEnd="69dp"
+                android:layout_marginBottom="25dp"
                 app:layout_constraintBottom_toTopOf="@+id/Raza"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lblCapacidadMochila"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintTop_toBottomOf="@+id/Clase" />
 
-            <TextView
-                android:id="@+id/Raza"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="136dp"
-                android:text="@string/_05"
-                app:barrierAllowsGoneWidgets="false"
-                app:layout_constraintBottom_toTopOf="@+id/txtRaza"
-                app:layout_constraintEnd_toEndOf="parent"
+            <Button
+                android:id="@+id/esELFO"
+                android:layout_width="84dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="27dp"
+                android:text="Elfo"
+                app:layout_constraintBottom_toTopOf="@+id/Edad"
+                app:layout_constraintEnd_toStartOf="@+id/esENANO"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtMochila"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintTop_toBottomOf="@+id/esGOBLIN" />
 
-            <EditText
-                android:id="@+id/txtRaza"
-                android:layout_width="299dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginEnd="65dp"
-                android:layout_marginBottom="9dp"
-                android:autofillHints="Raza"
-                android:inputType="text"
-                app:barrierAllowsGoneWidgets="false"
+            <Button
+                android:id="@+id/esHUMANO"
+                android:layout_width="106dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="133dp"
+                android:layout_marginBottom="10dp"
+                android:text="Humano"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/esENANO"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/esGOBLIN"
+                app:layout_constraintTop_toBottomOf="@+id/Raza" />
+
+            <Button
+                android:id="@+id/esENANO"
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="133dp"
+                android:layout_marginBottom="27dp"
+                android:text="Enano"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/Edad"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/esELFO"
+                app:layout_constraintTop_toBottomOf="@+id/esHUMANO" />
+
+            <Button
+                android:id="@+id/esGOBLIN"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="10dp"
+                android:text="Goblin"
+                app:layout_constraintBottom_toTopOf="@+id/esELFO"
+                app:layout_constraintEnd_toStartOf="@+id/esHUMANO"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Raza"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintTop_toBottomOf="@+id/Raza" />
 
-
-            <TextView
-                android:id="@+id/Clase"
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="181dp"
-                android:text="@string/_06"
-                app:barrierAllowsGoneWidgets="false"
-                app:layout_constraintBottom_toTopOf="@+id/txtClase"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtEdad"
-                tools:ignore="MissingConstraints" />
-
-
-            <EditText
-                android:id="@+id/txtClase"
-                android:layout_width="299dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginEnd="67dp"
-                android:layout_marginBottom="38dp"
-                android:autofillHints="Clase"
-                android:inputType="text"
-                app:barrierAllowsGoneWidgets="false"
-                app:layout_constraintBottom_toTopOf="@+id/aceptar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Clase"
-                tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/aceptar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="116dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="117dp"
+                android:layout_marginStart="109dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="125dp"
                 android:text="@string/aceptar"
                 app:barrierAllowsGoneWidgets="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtClase"
+                app:layout_constraintTop_toBottomOf="@+id/txtMochila"
                 tools:ignore="MissingConstraints" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

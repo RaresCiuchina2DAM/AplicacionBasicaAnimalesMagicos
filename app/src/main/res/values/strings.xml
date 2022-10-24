@@ -3,10 +3,9 @@
     <string name="principal">CREA TU PERSONAJE</string>
     <string name="_02">Dime el oficio de tu personaje</string>
     <string name="_01">Dime el nombre de tu personaje</string>
-    <string name="_03">Dime la capacidad de la mochila de tu personaje</string>
+    <string name="_03">Dime la capacidad de la mochila\n de tu personaje</string>
     <string name="_04">Dime la edad de tu personaje</string>
-    <string name="_05">Dime el dime la raza de tu personaje</string>
-
+    <string name="_05">Dime la raza de tu personaje</string>
     <string name="_06">Dime la clase de tu personaje</string>
 
 

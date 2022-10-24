@@ -2,11 +2,13 @@ package com.example.myapplication
 
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
+import android.widget.*
+import androidx.annotation.RequiresApi
+import androidx.core.view.isNotEmpty
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +19,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var txtRaza: EditText
     private lateinit var btnAceptar: Button
     private lateinit var txtMochila: EditText
+    private lateinit var cmbOpciones: Spinner
+    private lateinit var btnGoblin: Button
+    private lateinit var btnHumano: Button
+    private lateinit var btnElfo: Button
+    private lateinit var btnEnano: Button
 
+
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,59 +37,99 @@ class MainActivity : AppCompatActivity() {
         txtEdad = findViewById(R.id.txtEdad)
         txtMochila = findViewById(R.id.txtMochila)
         btnAceptar = findViewById(R.id.aceptar)
-        txtRaza = findViewById(R.id.txtRaza)
-        txtClase = findViewById(R.id.txtClase)
+        txtClase = findViewById(R.id.Clase)
+        btnGoblin = findViewById(R.id.esGOBLIN)
+        btnHumano = findViewById(R.id.esHUMANO)
+        btnElfo = findViewById(R.id.esELFO)
+        btnEnano = findViewById(R.id.esENANO)
+        cmbOpciones = findViewById(R.id.cmbOpciones)
+
+
+        val datos = arrayOf("Mago", "Ladron", "Guerrero", "Berserker")
+        val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, datos)
+        cmbOpciones.adapter = adaptador
+
+
+        cmbOpciones.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                txtClase.setText(datos[position])
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                txtClase.error = "Debe seleccionar una clase"
+            }
+        }
+
+
+        if (btnGoblin.isPressed){
+            txtRaza.setText("Goblin")
+            btnGoblin.setBackgroundColor(getColor(R.color.purple_500))
+            //reseteo
+            btnHumano.setBackgroundColor(getColor(R.color.colorPrimary))
+            btnElfo.setBackgroundColor(getColor(R.color.colorPrimary))
+            btnEnano.setBackgroundColor(getColor(R.color.colorPrimary))
+        }
+
+        if (btnHumano.isPressed){
+            txtRaza.setText("Humano")
+            btnHumano.setBackgroundColor(getColor(R.color.purple_500))
+            //reseteo de los demas
+            btnGoblin.setBackgroundColor(getColor(R.color.colorPrimary))
+            btnElfo.setBackgroundColor(getColor(R.color.colorPrimary))
+            btnEnano.setBackgroundColor(getColor(R.color.colorPrimary))
+        }
+
+        if (btnElfo.isPressed){
+            txtRaza.setText("Elfo")
+            btnElfo.setBackgroundColor(getColor(R.color.purple_500))
+            //reseteo de los demas
+            btnGoblin.setBackgroundColor(getColor(R.color.colorPrimary))
+            btnHumano.setBackgroundColor(getColor(R.color.colorPrimary))
+            btnEnano.setBackgroundColor(getColor(R.color.colorPrimary))
+        }
+
+        if (btnEnano.isPressed){
+            txtRaza.setText("Enano")
+            btnEnano.setBackgroundColor(getColor(R.color.purple_500))
+            //reseteo de los demas
+            btnGoblin.setBackgroundColor(getColor(R.color.colorPrimary))
+            btnHumano.setBackgroundColor(getColor(R.color.colorPrimary))
+            btnElfo.setBackgroundColor(getColor(R.color.colorPrimary))
+        }
+
+
 
         btnAceptar.setOnClickListener {
-            validar(it)
+                validar(it)
         }
     }
 
     //fun validar (v: View){
     fun validar(view: View) {
 
-        if (txtNombre.text.toString().isEmpty()) {
-            txtNombre.error = "Campo obligatorio"
+        //clase
+        if (txtClase.text.isEmpty()) {
+            txtClase.error = "Debe seleccionar una clase"
         }
-        if (txtEdad.text.toString().isEmpty()) {
-            txtEdad.error = "Campo obligatorio"
+        if (txtNombre.text.isEmpty()) {
+             txtNombre.error = "Debe ingresar un nombre"
         }
-
-        if (txtClase.text.toString().isEmpty()) {
-            txtClase.error = "Campo obligatorio"
-        } else if (txtClase.text.toString() != "Guerrero"
-            && txtClase.text.toString() != "Mago"
-            && txtClase.text.toString() != "Arquero"
-        ) {
-            txtClase.error = "Solo puede ser Guerrero, Mago o Arquero"
+        if (txtEdad.text.isEmpty()) {
+                txtEdad.error = "Debe ingresar una edad"
         }
-
-        if (txtRaza.text.toString().isEmpty()) {
-            txtRaza.error = "Campo obligatorio"
-        } else if (txtRaza.text.toString() != "Humano"
-            && txtRaza.text.toString() != "Elfo"
-            && txtRaza.text.toString() != "Enano"
-        ) {
-            txtRaza.error = "Solo puede ser Humano, Elfo o Enano"
+        if (txtMochila.text.isEmpty()) {
+                txtMochila.error = "Debe ingresar una mochila"
         }
-
-        if (txtMochila.text.toString().isEmpty()) {
-            txtMochila.error = "Campo obligatorio"
+        if (txtRaza.text.isEmpty()) {
+                txtRaza.error = "Debe seleccionar una raza"
         }
+        if (txtNombre.text.isNotEmpty() &&
+            txtEdad.text.isNotEmpty() &&
+            txtMochila.text.isNotEmpty() &&
+            txtRaza.text.isNotEmpty() &&
+            txtClase.text.isNotEmpty()) {
 
-        if ((txtClase.text.toString() == "Guerrero"
-            || txtClase.text.toString() == "Mago"
-            || txtClase.text.toString() == "Arquero"
-        )&& (txtRaza.text.toString() == "Humano"
-            || txtRaza.text.toString() == "Elfo"
-            || txtRaza.text.toString() == "Enano"
-                    )&& txtNombre.text.toString().isNotEmpty()
-            && txtEdad.text.toString().isNotEmpty()
-            && txtClase.text.toString().isNotEmpty()
-            && txtRaza.text.toString().isNotEmpty()
-            && txtMochila.text.toString().isNotEmpty()
-
-        ) {
             val intent = Intent(this, SaludoActivity::class.java)
 
             //Creamos la información a pasar entre actividades

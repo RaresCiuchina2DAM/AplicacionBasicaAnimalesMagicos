@@ -1,11 +1,12 @@
 package com.example.myapplication
 
 import java.util.*
+import kotlin.math.absoluteValue
 
 
 fun comunicacion (respuesta : String, jugador: Jugador): String {
 
-    when (jugador.estadoVital) {
+    when (jugador.estadoVital.absoluteValue) {
         in 0..21 ->
             if (esMayuscula(respuesta) &&
                 //respuesta.get(index = 0) == '¿' &&
@@ -20,10 +21,6 @@ fun comunicacion (respuesta : String, jugador: Jugador): String {
                 return "Eh , relajate"
             } else if (respuesta == "¿Que haces?") {
                 return "A ti que te importa"
-            } else if (respuesta == "¿Que haces?") {
-                return "A ti que te importa"
-            } else if (respuesta == "puta") {
-                return "tu madreeeee"
             }else return "Yo que sé"
 
         in 22..65 ->
@@ -41,8 +38,6 @@ fun comunicacion (respuesta : String, jugador: Jugador): String {
                 return "No me levantes la voz mequetrefe"
             } else if (respuesta == "¿Que haces?") {
                 return "Buscar la flor de la vida"
-            } else if (respuesta == "puta") {
-                return "tu padreee"
             }else return "No sé de qué me estás hablando"
 
 
@@ -59,9 +54,8 @@ fun comunicacion (respuesta : String, jugador: Jugador): String {
         } else if (esMayuscula(respuesta)) {
             return "Háblame más alto que no te escucho"
         } else if (respuesta == "¿Que haces?") {
-            return "Buscar la flor de la vida"
-        } else if (respuesta == "puta") {
-                return "tu madreeeee"
+            return "mirar las obras"
+
         } else return "En mis tiempos esto no pasaba"
 
     }
